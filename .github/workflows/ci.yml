@@ -60,7 +60,7 @@ jobs:
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - run: nix build -L '.#coreboot-${{ matrix.board }}'
       - name: Get atrifact name
-        run: echo "FILENAME=$(nix eval --raw .#coreboot-tomato.name).rom" >> $GITHUB_ENV
+        run: echo "FILENAME=$(nix eval --raw .#coreboot-${{ matrix.board }}.name).rom" >> $GITHUB_ENV
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ env.FILENAME }}
