@@ -80,6 +80,7 @@ cat <<EOF >> generated-mtk.its
     configurations {
 EOF
 
+# TODO: coreboot lacks support for cmdline. Add it.
 for d in "${devices[@]}"; do
 cat <<EOF >> generated-mtk.its
         conf-$(echo "$d" | sed s/\\//-/) {
@@ -96,5 +97,7 @@ cat <<EOF >> generated-mtk.its
     };
 };
 EOF
+
+# TODO: Required when dtbs are compressed. also rework to include all compatible strings of the root node.
 
 # compatible = "$(dtc -I dtb -O dts "$dtbs_dir/$d.dtb" | sed -n '/^\s*\/\s*{/,/^\s*};/s/^\s*compatible\s*=\s*"\([^"]*\)".*$/\1/p')";
