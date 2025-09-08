@@ -18,7 +18,6 @@ pkgs.stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = with pkgs; [
     cacert
     coreboot-toolchain.aarch64
-    coreboot-toolchain.arm
     coreutils
     pkg-config
     openssh
