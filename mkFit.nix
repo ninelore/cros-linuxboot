@@ -20,8 +20,9 @@ pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
     cp ${initramfs} $out/initramfs-arm64.cpio
     lzma $out/Image
     lzma $out/initramfs-arm64.cpio
-    bash $src/generate-mtk-fit.sh $out ${kernel}/dtbs $out/initramfs-arm64.cpio.lzma
+    bash generate-mtk-fit.sh $out ${kernel}/dtbs $out/initramfs-arm64.cpio.lzma
+    cp generated-mtk.its $out/
     mkimage -f generated-mtk.its $out/uImage
-    rm -rf $out/Image.lzma $out/initramfs-arm64.cpio.lzma
+    # rm -rf $out/Image.lzma $out/initramfs-arm64.cpio.lzma
   '';
 })

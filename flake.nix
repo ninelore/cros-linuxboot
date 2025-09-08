@@ -23,6 +23,7 @@
         in
         rec {
           initramfs-arm64 = import ./mkCpio.nix {
+            arch = "aarch64-linux";
             inherit pkgs;
             inherit (inputs) u-root;
           };

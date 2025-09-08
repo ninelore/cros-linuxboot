@@ -54,7 +54,7 @@ cat <<EOF > generated-mtk.its
             load = <00000000>;
             entry = <00000000>;
             hash-1 {
-                algo = "sha256";
+                algo = "sha1";
             };
         };
 EOF
@@ -84,10 +84,10 @@ for d in "${devices[@]}"; do
 cat <<EOF >> generated-mtk.its
         conf-$(echo "$d" | sed s/\\//-/) {
             description = "Boot Linux kernel with FDT blob";
+            cmdline = "console=tty0";
             kernel = "kernel";
             ramdisk = "ramdisk";
             fdt = "fdt-$(echo "$d" | sed s/\\//-/)";
-            compatible = "$(sed -n '/^\s*\/\s*{/,/^\s*};/s/^\s*compatible\s*=\s*"\([^"]*\)".*$/\1/p' "$dtbs_dir/$d.dts")";
         };
 EOF
 done
@@ -97,3 +97,4 @@ cat <<EOF >> generated-mtk.its
 };
 EOF
 
+# compatible = "$(dtc -I dtb -O dts "$dtbs_dir/$d.dtb" | sed -n '/^\s*\/\s*{/,/^\s*};/s/^\s*compatible\s*=\s*"\([^"]*\)".*$/\1/p')";
