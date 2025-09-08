@@ -45,7 +45,7 @@
             [
               # MT8183
               "krane"
-              "jacuzzy"
+              "juniper"
               # MT8186
               "steelix"
               "tentacruel"
