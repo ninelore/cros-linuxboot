@@ -12,7 +12,7 @@ on:
 jobs:
   nix-checks:
     name: Nix Flake Checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: docker/setup-qemu-action@v3
       - uses: DeterminateSystems/nix-installer-action@v19
@@ -24,7 +24,7 @@ jobs:
         run: nix flake check --all-systems
   build-kernel-mtk:
     name: Build MediaTek kernel
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: DeterminateSystems/nix-installer-action@v19
@@ -36,7 +36,7 @@ jobs:
   build-images-mtk:
     name: Build ${{ matrix.board }}
     needs: build-kernel-mtk
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
