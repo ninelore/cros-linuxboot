@@ -30,8 +30,7 @@ pkgs.stdenvNoCC.mkDerivation (
       ${pkgs.u-root}/bin/u-root \
         -uinitcmd "gosh -c 'sleep 1; boot'" \
         -o $out \
-        cmds/core/init \
-        cmds/core/gosh \
+        minimal \
         cmds/boot/boot
     '';
   }
