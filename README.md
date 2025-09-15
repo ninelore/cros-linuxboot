@@ -14,6 +14,7 @@ Repository for building LinuxBoot firmware images for Chromebooks
     - tentacruel
 - MT8192
     - hayato
+    - spherion
 - Mt8195
     - tomato
 
