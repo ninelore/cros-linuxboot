@@ -7,11 +7,11 @@
 pkgs.stdenv.mkDerivation (finalAttrs: {
   name = "${finalAttrs.pname}-${finalAttrs.version}";
   pname = "coreboot-${pkgs.lib.toLower board}";
-  version = "25.06-unstable-2025-09-07";
+  version = "25.06-unstable-2025-09-15";
   src = pkgs.fetchgit {
     url = "https://github.com/coreboot/coreboot.git";
-    rev = "ef1d48ee1d618a94ac5800760dd0a147c0aa951b";
-    hash = "sha256-XInuY9JoATvliL2loPF460TPqDU0Btg05oXheccTxIc=";
+    rev = "883103c77f16a070a7d92ee20a4089edf8d16e48";
+    hash = "sha256-7gpMQT66owd4Kq+940tL0/+7MTIC2TTc3UbaUrgrJAI=";
     fetchSubmodules = true;
   };
 
