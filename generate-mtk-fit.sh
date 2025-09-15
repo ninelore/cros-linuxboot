@@ -15,6 +15,7 @@ devices=(
 	'mediatek/mt8186-corsola-tentacruel-sku262144'
 	'mediatek/mt8186-corsola-tentacruel-sku262148'
 	'mediatek/mt8192-asurada-hayato-r1'
+	'mediatek/mt8192-asurada-spherion-r0'
 	'mediatek/mt8195-cherry-tomato-r2'
 	'mediatek/mt8195-cherry-tomato-r3'
 )

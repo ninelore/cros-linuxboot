@@ -51,6 +51,7 @@
               "tentacruel"
               # MT8192
               "hayato"
+              "spherion"
               # MT8195
               "tomato"
             ]
