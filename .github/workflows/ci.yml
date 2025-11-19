@@ -65,7 +65,7 @@ jobs:
       - run: nix build -L '.#coreboot-${{ matrix.board }}'
       - name: Get atrifact name
         run: echo "FILENAME=$(nix eval --raw .#coreboot-${{ matrix.board }}.name).rom" >> $GITHUB_ENV
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: ${{ env.FILENAME }}
           path: result/${{ env.FILENAME }}
