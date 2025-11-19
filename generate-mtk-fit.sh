@@ -2,6 +2,7 @@
 
 # dt files without extension
 devices=(
+	'mediatek/mt8183-kukui-jacuzzi-burnet'
 	'mediatek/mt8183-kukui-jacuzzi-juniper-sku16'
 	'mediatek/mt8183-kukui-krane-sku0'
 	'mediatek/mt8183-kukui-krane-sku176'

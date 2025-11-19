@@ -44,8 +44,9 @@
           pkgs.lib.genAttrs'
             [
               # MT8183
-              "krane"
+              "esche"
               "juniper"
+              "krane"
               # MT8186
               "steelix"
               "tentacruel"
