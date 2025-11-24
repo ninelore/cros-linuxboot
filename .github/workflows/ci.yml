@@ -21,14 +21,14 @@ jobs:
         with:
           extra_nix_config: |
             extra-platforms = aarch64-linux
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Run nix flake check
         run: nix flake check --all-systems
   build-kernel-mtk:
     name: Build MediaTek kernel
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: cachix/install-nix-action@v31
       - uses: cachix/cachix-action@v16
         with:
@@ -56,7 +56,7 @@ jobs:
           # MT8195
           - tomato
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: cachix/install-nix-action@v31
       - uses: cachix/cachix-action@v16
         with:
