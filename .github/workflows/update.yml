@@ -12,5 +12,16 @@ jobs:
       - uses: actions/checkout@v6
       - uses: cachix/install-nix-action@v31
       - name: Update flake.lock
-        id: update
-        uses: DeterminateSystems/update-flake-lock@v27
+        run: |
+          set -Eeu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          nix flake update --commit-lock-file
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: ci/update
+          delete-branch: true
+          title: "Updates"
+          body: |
+            See commit messages for details
